@@ -1,0 +1,171 @@
+{
+  "user": [
+    {
+      "id": "b60db27-6f7-bb0-cdc6-7d4dea042ff8",
+      "email": "admin@gmail.com",
+      "password": "mohit",
+      "cpassword": "mohit"
+    },
+    {
+      "id": "e7a254-a03f-22ec-e02f-53fcac5348",
+      "email": "admin2@gmail.com",
+      "password": "mohit",
+      "cpassword": "mohit"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ea0a8c7-558d-3b0f-5570-45befc54a",
+      "userId": "b60db27-6f7-bb0-cdc6-7d4dea042ff8",
+      "mcq": {
+        "question": "what is js?",
+        "option1": "hyper text",
+        "option2": "casecading style",
+        "option3": "scripting language",
+        "option4": "python framwork",
+        "answer": "C"
+      },
+      "msq": {
+        "question": "what is ml?",
+        "option1": "ai",
+        "option2": "robot",
+        "option3": "machine",
+        "option4": "js",
+        "answer": [
+          "A",
+          "C"
+        ]
+      },
+      "trueFalse": {
+        "question": "is this a mobile?",
+        "answer": "False"
+      }
+    },
+    {
+      "id": "0353c3-dc44-d06-61ff-268ecdf53d",
+      "userId": "e7a254-a03f-22ec-e02f-53fcac5348",
+      "mcq": {
+        "question": "How can you create an e-mail link?",
+        "option1": "<mail href=\"a@b\">",
+        "option2": "<mail>a@b</mail>",
+        "option3": "<a href=\"a@b\">",
+        "option4": "<a href=\"mailto:a@b.com\">",
+        "answer": "C"
+      },
+      "msq": {
+        "question": "Which of the following JavaScript cannot do?",
+        "option1": " JavaScript can react to events",
+        "option2": "JavaScript can manipulate HTML elements",
+        "option3": "JavaScript can be use to validate data",
+        "option4": "javascript use in designing also",
+        "answer": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "trueFalse": {
+        "question": "Easy data exchange great about XML!",
+        "answer": ""
+      }
+    },
+    {
+      "id": "e50424c-e2fe-4e64-eb3e-e450ccef0677",
+      "userId": "e7a254-a03f-22ec-e02f-53fcac5348",
+      "mcq": {
+        "question": "what is js?",
+        "option1": "html",
+        "option2": "css",
+        "option3": "js",
+        "option4": "python",
+        "answer": "C"
+      },
+      "msq": {
+        "question": "what is ml?",
+        "option1": "ai",
+        "option2": "ml",
+        "option3": "java",
+        "option4": "machine",
+        "answer": [
+          "D",
+          "B",
+          "A"
+        ]
+      },
+      "trueFalse": {
+        "question": "is this a mobile?",
+        "answer": "False"
+      }
+    }
+  ],
+  "answers": [
+    {
+      "id": "b3f2fd4-6b65-d02a-4d37-461caf5d7a0",
+      "questioId": "ea0a8c7-558d-3b0f-5570-45befc54a",
+      "user": "japani",
+      "mcqAnswer": "C",
+      "msqAnswer": [
+        "C",
+        "D"
+      ],
+      "trueFalseAnswer": ""
+    },
+    {
+      "id": "b71157-73d8-71cf-f7fb-ad326d3de7ae",
+      "questioId": "ea0a8c7-558d-3b0f-5570-45befc54a",
+      "user": "mohit",
+      "mcqAnswer": "C",
+      "msqAnswer": [
+        "B",
+        "A",
+        "C"
+      ],
+      "trueFalseAnswer": ""
+    },
+    {
+      "id": "4d3e2-1ad8-c7b-ba1d-3cf42f2346",
+      "questioId": "ea0a8c7-558d-3b0f-5570-45befc54a",
+      "user": "gaurav",
+      "mcqAnswer": "C",
+      "msqAnswer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "trueFalseAnswer": "True"
+    },
+    {
+      "id": "da17888-26c3-fa12-2fbf-1fb2dc2a88",
+      "questioId": "0353c3-dc44-d06-61ff-268ecdf53d",
+      "user": "mohit",
+      "mcqAnswer": "B",
+      "msqAnswer": [
+        "B",
+        "C"
+      ],
+      "trueFalseAnswer": "True"
+    },
+    {
+      "questioId": "0353c3-dc44-d06-61ff-268ecdf53d",
+      "id": "a448f0d-f8-cd8a-e3c0-552f121da75e",
+      "user": "japai",
+      "mcqAnswer": "A",
+      "msqAnswer": [
+        "A",
+        "D"
+      ],
+      "trueFalseAnswer": "True"
+    },
+    {
+      "questioId": "0353c3-dc44-d06-61ff-268ecdf53d",
+      "id": "b10f1af-840-c1cf-0d4-840365158a3",
+      "user": "pipla",
+      "mcqAnswer": "B",
+      "msqAnswer": [
+        "B",
+        "A"
+      ],
+      "trueFalseAnswer": "True"
+    }
+  ]
+}

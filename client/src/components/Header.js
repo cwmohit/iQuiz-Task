@@ -1,10 +1,16 @@
 import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {UserContext,setUserContext} from '../App';
-export default function Header({setUser}) {
+export default function Header() {
 
     const userLogin = useContext(UserContext);
-    const setUserLog = useContext(setUserContext);
+    const setUser = useContext(setUserContext);
+    const userLogout=()=>{
+        localStorage.removeItem("user");
+        setUser({
+            userLogin: false, userId: ""
+        })
+    }
    console.log(userLogin)
     return (
         <div className="container-fluid bg-dark mb-2">
@@ -23,7 +29,7 @@ export default function Header({setUser}) {
                             userLogin.userLogin && <li className="nav-item"><Link className="nav-link" to="/QuizList">QuizList</Link> </li>
                         }
                         {
-                            userLogin.userLogin ? <li className="nav-item"><Link className="nav-link" to="/Auth" onClick={()=>setUserLog({userLogin: false, userId: ""})}>Logout</Link> </li>
+                            userLogin.userLogin ? <li className="nav-item"><Link className="nav-link" to="/Auth" onClick={userLogout}>Logout</Link> </li>
                              : <li className="nav-item">
                             <Link className="nav-link" to="/Auth">Login</Link>
                         </li> 

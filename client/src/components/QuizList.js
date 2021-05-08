@@ -1,7 +1,20 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 export default function QuizList() {
-    console.log("QuizList")
+    const [questions, setQuestions] = useState([])
+    const user = JSON.parse(localStorage.getItem("user")).user;
+    console.log(user)
+    useEffect(() => {
+        axios.get('http://localhost:3001/questions/').then((res) => {
+            const data = res.data.filter((question) => question.userId === user)
+            setQuestions(data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }, [])
+
+    console.log(questions)
     return (
         <div className="container quizList">
             <table className="table">
@@ -13,31 +26,12 @@ export default function QuizList() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><Link to='/Quiz/'>Click Here</Link></td>
+                    <tr >
+                        <th scope="row" >1</th>
+                        <td><Link to='/quiz'>Click Here</Link></td>
                         <td><Link to='/Submissions/1'>Click Here</Link></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><Link to='/Quiz/'>Click Here</Link></td>
-                        <td><Link to='/Submissions/2'>Click Here</Link></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><Link to='/Quiz/'>Click Here</Link></td>
-                        <td><Link to='/Submissions/3'>Click Here</Link></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td><Link to='/Quiz/'>Click Here</Link></td>
-                        <td><Link to='/Submissions/4'>Click Here</Link></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td><Link to='/Quiz'>Click Here</Link></td>
-                        <td><Link to='/Submissions/5'>Click Here</Link></td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
