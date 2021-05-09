@@ -40,7 +40,7 @@ export default function App() {
         <Route path='/' exact render={()=>user.userLogin===true? <CreateQuiz/>: <Redirect to='/Auth'/>}/>
         <Route path='/QuizList' exact render={()=>user.userLogin===true? <QuizList/>: <Redirect to='/Auth'/>}/>
         <Route path='/Quiz/:id'  exact component={Quiz}/>
-        <Route path='/Submissions' exact render={()=>user.userLogin===true? <Submissions/>: <Redirect to='/Auth'/>}/>
+        <Route path='/Submissions/:id' exact render={()=>user.userLogin===true? <Submissions/>: <Redirect to='/Auth'/>}/>
         <UserContext.Provider value={setUser}>
              <Route path='/Auth'  render={()=>user.userLogin===true?<Redirect to='/'/>: <Auth/> }/>
         </UserContext.Provider>

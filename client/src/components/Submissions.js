@@ -1,6 +1,19 @@
-import React from 'react'
-
+import React, { useState,useEffect } from 'react';
+import { useParams } from 'react-router';
+import axios from 'axios'
+import _ from 'lodash';
 export default function Submissions() {
+   const [answers,setAnswers]=useState([]);
+   const {id}=useParams()
+ useEffect(() => {
+        axios.get('http://localhost:3002/answers/').then((res) => {
+            const data = res.data.filter((answer) => answer.questioId === id)
+            setAnswers(data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }, [])
+
     return (
         <div className="container quizList">
         <table className="table">
@@ -12,31 +25,11 @@ export default function Submissions() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mohit Kandhari</td>
-                    <td>1. A, 2. A,B, 3. True</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Vikas</td>
-                    <td>1. A, 2. A,B, 3. True</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Anshul</td>
-                    <td>1. A, 2. A,B, 3. True</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Lorem</td>
-                    <td>1. A, 2. A,B, 3. True</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>ipsum</td>
-                    <td>1. A, 2. A,B, 3. True</td>
-                </tr>
+            {answers.map((answer,index)=><tr key={answer.id}><td>{index+1}</td>
+                    <td>{answer.user}</td>
+                    <td>1. {answer.mcqAnswer}, 2. {answer.msqAnswer.map(option=>option)}, 3. {answer.trueFalseAnswer}</td>
+                    </tr>)}
+                   
             </tbody>
         </table>
     </div>

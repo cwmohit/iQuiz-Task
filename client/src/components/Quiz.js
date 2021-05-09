@@ -12,7 +12,7 @@ export default function Quiz() {
     let {id}=useParams()
    
     useEffect(()=>{
-     axios.get(`http://localhost:3001/questions/${id}`).then((res)=>{
+     axios.get(`http://localhost:3002/questions/${id}`).then((res)=>{
         setQuizData(res.data)
      }).catch((err)=>{
          console.log(err)
@@ -35,7 +35,7 @@ export default function Quiz() {
     const onHandleSubmit=(e)=>{
      e.preventDefault();
      let userId = uuid()
-     axios.post('http://localhost:3001/answers', {
+     axios.post('http://localhost:3002/answers', {
         questioId: id,
         id: userId,
         user: name,

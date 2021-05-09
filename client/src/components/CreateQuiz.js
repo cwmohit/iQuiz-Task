@@ -5,7 +5,7 @@ import uuid from 'react-uuid';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 export default function CreateQuiz() {
-
+   const [id,setId] = useState('')
     const [mcq, setMcq] = useState({
         question: "", option1: "", option2: "", option3: "", option4: "", answer: ""
     });
@@ -16,11 +16,12 @@ export default function CreateQuiz() {
         question: "", answer: ""
     })
 
-    let id = uuid();
+    
+    
     const formHandleSubmit = (e) => {
         e.preventDefault();
         let user = JSON.parse(localStorage.getItem("user")).user;
-        axios.post('http://localhost:3001/questions', {
+        axios.post('http://localhost:3002/questions', {
             id: id,
             userId: user,
             mcq, msq, trueFalse
@@ -126,7 +127,7 @@ export default function CreateQuiz() {
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" data-toggle="modal" data-target="#exampleModal" className="btn my-3 btn-outline-primary">Submit</button>
+                        <button onClick={()=>setId(uuid())} type="submit" data-toggle="modal" data-target="#exampleModal" className="btn my-3 btn-outline-primary">Submit</button>
                     </form>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog" role="document">

@@ -6,7 +6,7 @@ export default function QuizList() {
     const user = JSON.parse(localStorage.getItem("user")).user;
     console.log(user)
     useEffect(() => {
-        axios.get('http://localhost:3001/questions/').then((res) => {
+        axios.get('http://localhost:3002/questions/').then((res) => {
             const data = res.data.filter((question) => question.userId === user)
             setQuestions(data)
         }).catch((err) => {
@@ -14,7 +14,7 @@ export default function QuizList() {
         })
     }, [])
 
-    console.log(questions)
+  
     return (
         <div className="container quizList">
             <table className="table">
@@ -26,11 +26,11 @@ export default function QuizList() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr >
-                        <th scope="row" >1</th>
-                        <td><Link to='/quiz'>Click Here</Link></td>
-                        <td><Link to='/Submissions/1'>Click Here</Link></td>
-                    </tr>
+                    {questions.map((question,index)=><tr key={question.id}><td>{index+1}</td>
+                    <td><Link to={`/quiz/${question.id}`}>Click here</Link></td>
+                    <td><Link to={`/Submissions/${question.id}`}>Click Here</Link></td>
+                    </tr>)}
+                   
 
                 </tbody>
             </table>

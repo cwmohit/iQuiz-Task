@@ -17,7 +17,7 @@ export function Register() {
         e.preventDefault();
         console.log(authRegister);
 
-        axios.get('http://localhost:3001/user')
+        axios.get('http://localhost:3002/user')
         .then(function (response) {
            const data = response.data;
            const user=data.filter((user)=>user.email===authRegister.email)
@@ -30,7 +30,7 @@ export function Register() {
            }else{
             if (authRegister.password === authRegister.cpassword) {
                 let userid = uuid();
-                axios.post('http://localhost:3001/user', {
+                axios.post('http://localhost:3002/user', {
                     id: userid,
                     email: authRegister.email,
                     password: authRegister.password,
@@ -93,7 +93,7 @@ export function Login() {
     }
     const loginSubmit = (e) => {
         e.preventDefault();
-        axios.get('http://localhost:3001/user')
+        axios.get('http://localhost:3002/user')
             .then(function (response) {
                const data = response.data;
                const user=data.filter((user)=>user.email===AuthLogin.email)
