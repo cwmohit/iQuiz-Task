@@ -10,9 +10,9 @@ For development, you will only need Node.js and a node global package, installed
      cd client
      npm install
 
-### Run Testing server
-  cd apis
-  npm start
+### Run Testing server  
+     cd apis
+     npm start
 
 ### Running the project
      npm start
