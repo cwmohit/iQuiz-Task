@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
+import quiz from '../apis/quiz';
 import uuid from 'react-uuid';
 import _ from 'lodash';
 export default function Quiz() {
@@ -12,7 +13,7 @@ export default function Quiz() {
     let {id}=useParams()
    
     useEffect(()=>{
-     axios.get(`http://localhost:3002/questions/${id}`).then((res)=>{
+     quiz.get(`/questions/${id}`).then((res)=>{
         setQuizData(res.data)
      }).catch((err)=>{
          console.log(err)
@@ -35,7 +36,7 @@ export default function Quiz() {
     const onHandleSubmit=(e)=>{
      e.preventDefault();
      let userId = uuid()
-     axios.post('http://localhost:3002/answers', {
+     quiz.post('/answers', {
         questioId: id,
         id: userId,
         user: name,

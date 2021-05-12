@@ -17,6 +17,24 @@
       "email": "admin1@gmail.com",
       "password": "mohit",
       "cpassword": "mohit"
+    },
+    {
+      "id": "df3764d-2a2-b5-602a-d3e117fe560",
+      "email": "admin3@gmail.com",
+      "password": "mohit",
+      "cpassword": "mohit"
+    },
+    {
+      "id": "bc25e46-bfa-6fd3-857c-234707277b3",
+      "email": "radhika@gmail.com",
+      "password": "mohit",
+      "cpassword": "mohit"
+    },
+    {
+      "id": "1a830a2-062a-10fc-fcc6-d1262e5c64d1",
+      "email": "admin5@gmail.com",
+      "password": "mohit",
+      "cpassword": "mohit"
     }
   ],
   "questions": [
@@ -129,6 +147,87 @@
         "question": "is this a mobile?",
         "answer": "False"
       }
+    },
+    {
+      "id": "33757-1880-1640-1fae-b8ccc6bb14a1",
+      "userId": "df3764d-2a2-b5-602a-d3e117fe560",
+      "mcq": {
+        "question": "what is js?",
+        "option1": "html",
+        "option2": "css",
+        "option3": "js",
+        "option4": "python",
+        "answer": "C"
+      },
+      "msq": {
+        "question": "what is ml?",
+        "option1": "sss",
+        "option2": "fsdds",
+        "option3": "sfdsf",
+        "option4": "dfsffds",
+        "answer": [
+          "B",
+          "A"
+        ]
+      },
+      "trueFalse": {
+        "question": "is this a mobile?",
+        "answer": "False"
+      }
+    },
+    {
+      "id": "d118e8a-7ac-4e8c-3bf-55127f873dd3",
+      "userId": "bc25e46-bfa-6fd3-857c-234707277b3",
+      "mcq": {
+        "question": "what is js?",
+        "option1": "sssf",
+        "option2": "fsdfd",
+        "option3": "fddsdsf",
+        "option4": "fdfddfs",
+        "answer": "C"
+      },
+      "msq": {
+        "question": "what is ml?",
+        "option1": "dfdf",
+        "option2": "dff",
+        "option3": "dfsd",
+        "option4": "dffdfd",
+        "answer": [
+          "A",
+          "B"
+        ]
+      },
+      "trueFalse": {
+        "question": "is this a mobile?",
+        "answer": "False"
+      }
+    },
+    {
+      "id": "45e6ae-b23b-f17e-d14a-1c247b4bcf8",
+      "userId": "b60db27-6f7-bb0-cdc6-7d4dea042ff8",
+      "mcq": {
+        "question": "what is mohit?",
+        "option1": "hello",
+        "option2": "i am",
+        "option3": "mohit",
+        "option4": "kandhari",
+        "answer": "C"
+      },
+      "msq": {
+        "question": "what is ml?",
+        "option1": "sasff",
+        "option2": "fdsas",
+        "option3": "dfasdf",
+        "option4": "fasdaf",
+        "answer": [
+          "B",
+          "C"
+        ]
+      },
+      "trueFalse": {
+        "question": "is this a mobile?",
+        "answer": ""
+      }
     }
   ],
   "answers": [
@@ -151,6 +250,42 @@
       "msqAnswer": [
         "C",
         "B"
+      ],
+      "trueFalseAnswer": "True"
+    },
+    {
+      "questioId": "33757-1880-1640-1fae-b8ccc6bb14a1",
+      "id": "ea6f5e-560a-b727-da46-300a3ed1d",
+      "user": "avinash",
+      "mcqAnswer": "C",
+      "msqAnswer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "trueFalseAnswer": "True"
+    },
+    {
+      "questioId": "d118e8a-7ac-4e8c-3bf-55127f873dd3",
+      "id": "eed3c15-8e40-b1ce-fd84-47f821045de",
+      "user": "mohit",
+      "mcqAnswer": "B",
+      "msqAnswer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "trueFalseAnswer": "True"
+    },
+    {
+      "questioId": "45e6ae-b23b-f17e-d14a-1c247b4bcf8",
+      "id": "35406ff-670f-0806-f273-b233733260b3",
+      "user": "jai ho",
+      "mcqAnswer": "C",
+      "msqAnswer": [
+        "B",
+        "A",
+        "C"
       ],
       "trueFalseAnswer": "True"
     }

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../App';
+import quiz from '../apis/quiz';
 import uuid from 'react-uuid';
 import axios from 'axios';
 export function Register() {
@@ -17,7 +18,7 @@ export function Register() {
         e.preventDefault();
         console.log(authRegister);
 
-        axios.get('http://localhost:3002/user')
+        quiz.get('/user')
         .then(function (response) {
            const data = response.data;
            const user=data.filter((user)=>user.email===authRegister.email)
@@ -30,7 +31,7 @@ export function Register() {
            }else{
             if (authRegister.password === authRegister.cpassword) {
                 let userid = uuid();
-                axios.post('http://localhost:3002/user', {
+                quiz.post('/user', {
                     id: userid,
                     email: authRegister.email,
                     password: authRegister.password,
@@ -93,7 +94,7 @@ export function Login() {
     }
     const loginSubmit = (e) => {
         e.preventDefault();
-        axios.get('http://localhost:3002/user')
+        quiz.get('/user')
             .then(function (response) {
                const data = response.data;
                const user=data.filter((user)=>user.email===AuthLogin.email)

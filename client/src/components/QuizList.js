@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import quiz from '../apis/quiz';
 import { Link } from 'react-router-dom'
 export default function QuizList() {
     const [questions, setQuestions] = useState([])
     const user = JSON.parse(localStorage.getItem("user")).user;
     console.log(user)
     useEffect(() => {
-        axios.get('http://localhost:3002/questions/').then((res) => {
+        quiz.get('/questions').then((res) => {
             const data = res.data.filter((question) => question.userId === user)
             setQuestions(data)
         }).catch((err) => {

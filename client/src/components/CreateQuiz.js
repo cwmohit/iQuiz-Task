@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
+import quiz from '../apis/quiz';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 export default function CreateQuiz() {
@@ -21,7 +22,7 @@ export default function CreateQuiz() {
     const formHandleSubmit = (e) => {
         e.preventDefault();
         let user = JSON.parse(localStorage.getItem("user")).user;
-        axios.post('http://localhost:3002/questions', {
+        quiz.post('/questions', {
             id: id,
             userId: user,
             mcq, msq, trueFalse
